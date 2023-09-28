@@ -1,5 +1,7 @@
-Front-end for the librarySystem node.js backend: https://github.com/Thnderbread/libraryProject
-Starter code / css from: https://github.com/gitdagray/react_persist_login/tree/main
+|| Front-end for the librarySystem node.js backend: https://github.com/Thnderbread/libraryProject
+|| Starter code / css from: https://github.com/gitdagray/react_persist_login/tree/main 
+
+||
 
 The complete front-end for the library system backend built on node.js, and my first "real" React project.
 I put together something rather simple as a display for the backend. I used this to avoid writing ejs, and just to get an idea of what writing React code is like.
