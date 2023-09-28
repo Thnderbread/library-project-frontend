@@ -1,24 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import Home from './components/Home';
+import Login from './components/Login';
+import Layout from './components/Layout';
+import Welcome from './components/Welcome';
+import NotFound from './components/NotFound';
+import Register from './components/Register';
+import Search from './components/Search/Search';
+import RequireAuth from './context/RequireAuth';
+import { Routes, Route } from 'react-router-dom';
+import PersistLogin from './components/PersistLogin';
+import UserWaitlist from './components/UserWaitlist';
+import UserCheckouts from './components/UserCheckouts';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path='/' element={<Layout />}>
+        <Route index element={<Welcome />} />
+
+        <Route path='register' element={<Register />} />
+        <Route path='login' element={<Login />} />
+        {/* <Route path='forgot' element={<Forgot />} /> */}
+
+        <Route element={<PersistLogin />}>
+          <Route element={<RequireAuth />}>
+
+            <Route path='home' index element={<Home />} />
+            <Route path='/books' >
+              <Route path='search' element={<Search />} /> {/* Searching for books */}
+            </Route>
+
+            <Route path='/users' >
+              <Route path='waitlist' element={<UserWaitlist />} /> {/* Displaying user's current waitlist. */}
+              <Route path='checkouts' element={<UserCheckouts />} /> {/* Displaying user checkouts */}
+            </Route>
+
+          </Route>
+        </Route>
+      </Route>
+
+      {/* Catch all - not found */}
+      <Route path='*' element={<NotFound />} />
+    </Routes>
   );
 }
 
