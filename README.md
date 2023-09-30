@@ -4,7 +4,7 @@
 ||
 
 The complete front-end for the library system backend built on node.js, and my first "real" React project.
-I put together something rather simple as a display for the backend. I used this to avoid writing ejs, and just to get an idea of what writing React code is like.
+I put together something rather simple as a display for the backend. I used this to get an idea of what writing React code is like.
 
 I hate it.
 
